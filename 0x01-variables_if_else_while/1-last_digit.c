@@ -3,12 +3,11 @@
 #include <stdio.h>
 
 /**
- * main - Determines if a number is positive, negative or zero.
- *
+ * main - Prints the last digit of a randomly generated number
  * Return: Always 0 (Success)
  */
 int main(void)
-{ 
+{
 	int n;
 
 	srand(time(0));
