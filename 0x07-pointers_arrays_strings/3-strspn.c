@@ -8,36 +8,22 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	unsigned int i, j, n, check;
-	j = 0;
-
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		check = 0;
-
-		for (n = 0; accept[n] != '\0'; n++)
-		{
-			if (accept[n] == s[i])
-			{
-				j++;
-				check = 1;
-			}
-		}
-		
+	unsigned int n = 0;
+	int r;
 
 	while (*s)
 	{
-		for (i = 0; accept[i]; i++)
+		for (r = 0; accept[r]; r++)
 		{
-			if (*s == accept[i])
+			if (*s == accept[r])
 			{
 				n++;
 				break;
 			}
-			else if (accept[i + 1] == '\0')
-				return (n);
+			else if (accept[r + 1] == '\0')
+				return (0);
 		}
-		i++;
+		s++;
 	}
-	return (n);
+	return (0);
 }
