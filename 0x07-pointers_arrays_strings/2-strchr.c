@@ -5,7 +5,7 @@
  * @s: string input
  * @c: character in s string
  *
- * return: 0
+ * Return: Always 0 (Success)
  */
 char *_strchr(char *s, char c)
 {
