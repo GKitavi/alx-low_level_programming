@@ -4,7 +4,8 @@
  * _strpbrk - Searches string for any set of byte
  * @s: string input
  * @accept: input
- * return: 0
+ *
+ * Return: Always 0 (Success)
  */
 char *_strpbrk(char *s, char *accept)
 {
