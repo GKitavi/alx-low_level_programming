@@ -33,32 +33,35 @@ int helper(char *s)
  */
 char **strtow(char *str)
 {
-	char **matrix, *tmp;
-	int i, k = 0, len = 0, words, c = 0, start, end;
+	char **m, *t;
+	int i, w, start, end;
+	int k = 0;
+	int l = 0;
+	int c = 0;
 
-	while (*(str + len))
-		len++;
-	words = helper(str);
-	if (words == 0)
+	while (*(str + l))
+		l++;
+	w = helper(str);
+	if (w == 0)
 		return (NULL);
-	matrix = (char **) malloc(sizeof(char *) * (words + 1));
-	if (matrix == NULL)
+	m = (char **) malloc(sizeof(char *) * (w + 1));
+	if (m == NULL)
 		return (NULL);
 
-	for (i = 0; i <= len; i++)
+	for (i = 0; i <= l; i++)
 	{
 		if (str[i] == ' ' || str[i] == '\0')
 		{
 			if (c)
 			{
 				end = i;
-				tmp = (char *) malloc(sizeof(char) * (c + 1));
-				if (tmp == NULL)
+				t = (char *) malloc(sizeof(char) * (c + 1));
+				if (t == NULL)
 					return (NULL);
 				while (start < end)
-					*tmp++ = str[start++];
-				*tmp = '\0';
-				matrix[k] = tmp - c;
+					*t++ = str[start++];
+				*t = '\0';
+				m[k] = t - c;
 				k++;
 				c = 0;
 			}
@@ -66,7 +69,7 @@ char **strtow(char *str)
 		else if (c++ == 0)
 			start = i;
 	}
-	matrix[k] = NULL;
+	m[k] = NULL;
 
-	return (matrix);
+	return (m);
 }
