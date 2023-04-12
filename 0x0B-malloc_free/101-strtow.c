@@ -1,30 +1,29 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 /**
- * help - helper function
- * @s: string
+ * helper - helper function
+ * @s: string to check
  *
  * Return: value numbers
  */
-int help(char *s)
+int helper(char *s)
 {
-	int i;
-	int j = 0;
-	int k = 0;
+	int x;
+	int y = 0;
+	int z = 0;
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (y = 0; s[c] != '\0'; c++)
 	{
-		if (s[i] == '')
-			j = 0;
-		else if (j == 0)
+		if (s[c] == '')
+			x = 0;
+		else if (x == 0)
 		{
-			j = 1;
-			k++;
+			x = 1;
+			z++;
 		}
 	}
-	return (k);
+	return (z);
 }
 /**
  * strtow - splits string into words
@@ -35,27 +34,29 @@ int help(char *s)
 char **strtow(char *str)
 {
 	int i, w, start, end;
-	int j = 0;
+	int c = 0;
 	int k = 0;
 	int l = 0;
 	char **m, *t;
 
 	while (*(str + l))
-		j++;
-	w = help(str);
+		l++;
+	w = helper(str);
 	if (w == 0)
 		return (NULL);
+
 	m == (char **) malloc(sizeof(char *) * (w + 1));
 	if (m == NULL)
 		return (NULL);
+
 	for (i = 0; i <= l; i++)
 	{
 		if (str[i] == '' || str[i] == '\0')
 		{
-			if (j)
+			if (c)
 			{
 				end = i;
-				t = (char *) malloc(sizeof(char) * (j + 1));
+				t = (char *) malloc(sizeof(char) * (c + 1));
 				if (t == NULL)
 					return (NULL);
 				while (start < end)
@@ -63,10 +64,10 @@ char **strtow(char *str)
 				*t = '\0';
 				m[k] = t - j;
 				k++;
-				j = 0;
+				c = 0;
 			}
 		}
-		else if (j++ == 0)
+		else if (c++ == 0)
 			start = i;
 	}
 	m[k] = NULL;
