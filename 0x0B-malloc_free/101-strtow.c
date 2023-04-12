@@ -62,7 +62,7 @@ char **strtow(char *str)
 				while (start < end)
 					*t++ = str[start++];
 				*t = '\0';
-				m[k] = t - j;
+				m[k] = t - c;
 				k++;
 				c = 0;
 			}
