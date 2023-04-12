@@ -13,9 +13,9 @@ int helper(char *s)
 	int y = 0;
 	int z = 0;
 
-	for (y = 0; s[c] != '\0'; c++)
+	for (y = 0; s[y] != '\0'; y++)
 	{
-		if (s[c] == '')
+		if (s[y] == ' ')
 			x = 0;
 		else if (x == 0)
 		{
@@ -51,7 +51,7 @@ char **strtow(char *str)
 
 	for (i = 0; i <= l; i++)
 	{
-		if (str[i] == '' || str[i] == '\0')
+		if (str[i] == ' ' || str[i] == '\0')
 		{
 			if (c)
 			{
