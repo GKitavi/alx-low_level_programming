@@ -2,24 +2,39 @@
 #include <stdlib.h>
 
 /**
+ * _memset - fills memory with a constant byte
+ * @s: memory area
+ * @b: char to copy
+ * @n: number of times to copy b
+ *
+ * Return: pointer to memory area 
+ */
+char *_memset(char *s, char b, unsigned int n)
+{
+	unsigned int i;
+
+	for (i = 0; i < n; i++)
+		s[i] = b;
+	return (s);
+}
+
+/**
  * _calloc - Allocates array memory
  * @nmemb: - number of elements
  * @size: size of bytes
  *
- * Return: pointer
+ * Return: pointer to allocated memory
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	char *s;
-	unsigned int i;
+	char *ptr;
 
-	if (nmemb == 0 || size = 0)
+	if (nmemb == 0 || size == 0)
 		return (NULL);
-	s = malloc(nmemb * size);
-	if (s == NULL)
+	ptr = malloc(nmemb * size);
+	if (ptr == NULL)
 		return (NULL);
-	for (i = 0; i < nmemb * size; i++)
-		s[i] = 0;
+	_memset(ptr, 0, nmemb * size);
 
-	return (s);
+	return (ptr);
 }
