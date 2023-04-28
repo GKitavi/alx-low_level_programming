@@ -1,6 +1,7 @@
 #include "lists.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <stddef.h>
 
 /**
  * list_len - length of list_t
@@ -10,7 +11,7 @@
  */
 size_t list_len(const list_t *h)
 {
-	size_t i = 0;
+	int i = 0;
 
 	while (h != NULL)
 	{
