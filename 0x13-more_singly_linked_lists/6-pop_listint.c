@@ -3,7 +3,7 @@
 /**
  * pop_listint - pops the head node
  * @head: node head
- *  
+ *
  * Return: head node data
  */
 int pop_listint(listint_t **head)
