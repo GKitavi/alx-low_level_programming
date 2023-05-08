@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdlib.h>
+
 /**
  * read_textfile - reads a textfile
  * @filename: file to read
@@ -18,10 +20,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	fd = open(filename, O_RDWR);
 	if (fd == -1)
 		return (0);
-	printed = read(fd, buff, letters);
+	pr = read(fd, buff, letters);
 	if (pr == -1)
 		return (0);
-	w = write(STDOUT_FILENO, buff, printed);
+	w = write(STDOUT_FILENO, buff, pr);
 	if (w == -1)
 		return (0);
 	if (close(fd) == -1)
